@@ -1,1 +1,3 @@
-# dkt-app
+# DKT
+
+## A simple fun application
