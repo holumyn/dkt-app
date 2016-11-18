@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Certificate</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Honey and Banana Fun app">
+  <meta name="keywords" content="DKT, Fun, App, Honey, Banana">
+  <meta name="author" content="DKT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lancelot" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="typed.js"></script>
+
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">
+     stLight.options({publisher: "ur-8d0c9235-27a2-8541-b35a-14aead123a91", doNotHash: false, doNotCopy: false, hashAddressBar: false});
+   </script>
+
+  
+
+  <style>
+ </style>
+
+<script>
+
+
+
+</script>
+</head>
+<body style="background-color: #fff;">
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1635568866740319',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+
+
+     FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    //console.log('Logged in.');
+   // document.getElementById('msg').innerHTML = 'Logged in';
+
+    var uid = response.authResponse.userID;
+   var accessToken = response.authResponse.accessToken;
+
+   FB.api('/'+ uid +'/picture?access_token='+ accessToken +'&type=large', 
+           function(response) { 
+
+           		 document.getElementById("myImg").src = response.data.url ;
+           	
+              
+           });
+
+    
+  
+  }else if(response.status === 'not_authorized'){
+   // document.getElementById('msg').innerHTML = 'Not Authorized';
+
+    FB.login();
+
+  }
+  else {
+    FB.login();
+    //document.getElementById('msg').innerHTML = 'Log in';
+
+  }
+});
+
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+   
+      <div id="msg"></div>
+      <div id="fb"></div>
+    
+
+
+
+
+    
+        <div style="width:800px; margin: 20px auto;position:relative;"><img src="img/female_cert.png" class="img-responsive pull-right" width="100%">
+        	<div style="width:200px; height: 200px; top:275px;left:150px; margin: 20px auto;position:absolute;"><img id="myImg" src="img/pix.png" class="img-responsive img-rounded pull-right" width="100%"></div>
+
+        </div>
+        
+
+
+    </div>
+  </div>
+
+  <div class="row">
+     <br><br>
+    <div class="col-sm-12" style="text-align:center;"><button type="button" onclick="print_cert();" class="btn btn-primary" >Print</button></div>
+      <br><br>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  function print_cert(){
+    
+    $( "button" ).addClass( "hidden" );
+    window.print();
+  }
+</script>
+</body>
+</html>
+
